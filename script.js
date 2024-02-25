@@ -11,13 +11,13 @@ const promises = new Array(3);
 for(let i=0 ; i<3 ; i++){
 	let delay = Math.floor(Math.random()*4);
 	promises[i] = promiseCreator(delay*1000 , `Promise ${i+1}`);
-	let newRow = output.insertRow();
-	newRow.id = 'loading';
-	let cell = newRow.insertCell();
-	cell.colSpan = 2;
-	cell.textContent = "Loading...";
-}
-
+	
+} 
+let newRow = output.insertRow();
+newRow.id = 'loading';
+let cell = newRow.insertCell();
+cell.colSpan = 2;
+cell.textContent = "Loading...";
 function createPromise(i) {
   return new Promise((resolve, reject) => {
     const delay = Math.random() * 2000 + 1000; // Random delay between 1 and 3 seconds
@@ -61,7 +61,7 @@ let total = 0;
   const row = output.insertRow();
   const cell1 = row.insertCell();
   cell1.textContent = 'Total';
-  const cell2 = row.insertCell();
+  const cell2 = row.insertCell(); 
   cell2.textContent = total.toFixed(3);
 }); 
 
