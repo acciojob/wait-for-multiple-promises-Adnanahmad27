@@ -12,6 +12,7 @@ for(let i=0 ; i<3 ; i++){
 	let delay = Math.floor(Math.random()*4);
 	promises[i] = promiseCreator(delay*1000 , `Promise ${i+1}`);
 	let newRow = output.insertRow();
+	newRow.id = 'loading';
 	let cell = newRow.insertCell();
 	cell.colSpan = 2;
 	cell.textContent = "Loading...";
